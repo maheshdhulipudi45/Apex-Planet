@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./apextask2.css">
+</head>
+
+<body>
+    <div id="box1">
+ <h1>WELCOME TO THE  Nexora Solutions </h1>
+    </div>
+    <div id="box11">
+        <div id="box2">
+            <h1>LOGIN-DETAILS</h1>
+            <form>
+                <label for="Fname">First Name:</label><p ></p>
+                <input type="text" id="Fname" placeholder="First Name" required><p id="p1"></p>
+                 <label for="Fname2">Last Name:</label><p></p>
+                <input type="text" id="Fname2" placeholder="First Name" required><p id="p2"></p>
+                <label for="Fname3">Email</label><p></p>
+                <input type="email" id="Fname3" placeholder="Email" required><p id="p3"></p>
+                <label>Password</label><p></p>
+                <input type="password" id="Fname4" placeholder="Password" required><p id="p4"></p>
+
+                <input type="submit" onclick="MyClick" >
+            </form>
+
+    </div>
+    <div id="box3">
+        <h2>To-Do-List</h2>
+        <input type="text" id="taskInput" placeholder="Enter a task">
+        <button id="addTask">Add Task</button>
+        <ul id="taskList"></ul>
+    </div>
+     </div>
+     <script>
+    
+
+function MyClick(){
+    inpt1=document.getElementById("Fname").value
+        console.log(Fname)
+    para1=document.getElementById("p1")
+    para1.style.color="red"
+
+    if(inpt1==""){
+    para1.textContent="hi"
+
+    }
+    else{
+
+    }
+}
+
+       document.getElementById("addTask").addEventListener("click", function() {
+    let taskInput = document.getElementById("taskInput");
+    let taskList = document.getElementById("taskList");
+
+    if (taskInput.value.trim() !== "") {
+        let li = document.createElement("li");
+        li.textContent = taskInput.value;
+
+        let removeButton = document.createElement("button");
+        removeButton.textContent = "Remove";
+        removeButton.addEventListener("click", function() {
+            taskList.removeChild(li);
+        });
+
+        li.appendChild(removeButton);
+        taskList.appendChild(li);
+        taskInput.value = "";
+    }
+});
+     </script>
+    
+</body>
+</html>
